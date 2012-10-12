@@ -4,7 +4,7 @@
 
 void gridLines();
 
-void DarkGDK()
+void DarkGDK()//trey is retarded
 {
 
 	playerSetup();
