@@ -54,6 +54,7 @@ void DarkGDK()
 				dbPasteImage(getPlayerAnim(), getPlayerX() * 32, getPlayerY() * 32);
 				dbWait(100);
 			}
+			if (dbLeftKey() == 1)
 			{
 				char* coor;
 				movePlayerLeft();
