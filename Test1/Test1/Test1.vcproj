@@ -147,22 +147,30 @@
 			Filter="txt;cpp;h&quot;n"
 			>
 			<File
-				RelativePath=".\Main.cpp"
+				RelativePath=".\main.cpp"
 				>
 			</File>
 			<File
-				RelativePath=".\ReadMe.txt"
+				RelativePath=".\MisbehavingFunctions.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\player.cpp"
 				>
 			</File>
 		</Filter>
-		<File
-			RelativePath=".\Backdrop.bmp"
+		<Filter
+			Name="Header Files"
 			>
-		</File>
-		<File
-			RelativePath=".\Sprite.bmp"
-			>
-		</File>
+			<File
+				RelativePath=".\main.h"
+				>
+			</File>
+			<File
+				RelativePath=".\player.h"
+				>
+			</File>
+		</Filter>
 	</Files>
 	<Globals>
 	</Globals>
