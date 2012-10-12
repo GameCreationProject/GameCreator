@@ -1,5 +1,3 @@
-
-
 void playerSetup();
 bool playerInMotion();
 int getPlayerHealth();

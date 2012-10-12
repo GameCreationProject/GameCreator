@@ -56,7 +56,9 @@ bool movePlayerUp()
 {
 	if (playerY > 0)
 	{
-		playerY -= 4;
+		playerY -= 1;
+		if (playerY < 0)
+			playerY = 0;
 		playerDir = 0;
 		playerAnim = 0;
 		return true;
@@ -68,7 +70,11 @@ bool movePlayerDown()
 {
 	if (playerY < MAX_TILE_ROW)
 	{
-		playerY += 4;
+		playerY += 1;
+		if (playerY > MAX_TILE_ROW)
+		{
+			playerY = MAX_TILE_ROW;
+		}
 		playerDir = 2;
 		playerAnim = 0;
 		return true;
@@ -80,7 +86,9 @@ bool movePlayerLeft()
 {
 	if (playerX > 0)
 	{
-		playerX -= 4;
+		playerX -= 1;
+		if (playerX < 0)
+			playerX = 0;
 		playerDir = 3;
 		playerAnim = 0;
 		return true;
@@ -92,7 +100,11 @@ bool movePlayerRight()
 {
 	if (playerX < MAX_TILE_COL)
 	{
-		playerX += 4;
+		playerX += 1;
+		if (playerX > MAX_TILE_COL)
+		{
+			playerX = MAX_TILE_COL;
+		}
 		playerDir = 1;
 		playerAnim = 0;
 		return true;

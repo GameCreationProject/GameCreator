@@ -24,14 +24,11 @@ void DarkGDK()
 			if (dbUpKey() == 1)
 			{
 				char* coor;
-				dbPasteImage(getPlayerAnim(), getPlayerX() * 8, getPlayerY() * 8 - 2);
-				dbWait(20);
-				dbPasteImage(getPlayerAnim() + 1, getPlayerX() * 8, getPlayerY() * 8 - 4);
-				dbWait(20);
-				dbPasteImage(getPlayerAnim() + 2, getPlayerX() * 8, getPlayerY() * 8 - 6);
-				dbWait(20);
-				dbCLS(dbRGB(0,0,0));
-				movePlayerUp();
+				for (int i = 1; i <= 4; i++)
+				{
+					movePlayerUp();
+					drawPlayer();
+				}
 				coor = strcat(dbStr(getPlayerX() + 1)," : ");
 				coor = strcat(coor,dbStr(getPlayerY() + 1));
 				coor = strcat(coor," | " );
@@ -42,7 +39,11 @@ void DarkGDK()
 			if (dbDownKey() == 1)
 			{
 				char* coor;
-				movePlayerDown();
+				for (int i = 1; i <= 4; i++)
+				{
+					movePlayerDown();
+					drawPlayer();
+				}
 				coor = strcat(dbStr(getPlayerX() + 1)," : ");
 				coor = strcat(coor,dbStr(getPlayerY() + 1));
 				coor = strcat(coor," | " );
@@ -53,7 +54,11 @@ void DarkGDK()
 			if (dbRightKey() == 1)
 			{
 				char* coor;
-				movePlayerRight();
+				for (int i = 1; i <= 4; i++)
+				{
+					movePlayerRight();
+					drawPlayer();
+				}
 				coor = strcat(dbStr(getPlayerX() + 1)," : ");
 				coor = strcat(coor,dbStr(getPlayerY() + 1));
 				coor = strcat(coor," | " );
@@ -64,7 +69,11 @@ void DarkGDK()
 			if (dbLeftKey() == 1)
 			{
 				char* coor;
-				movePlayerLeft();
+				for (int i = 1; i <= 4; i++)
+				{
+					movePlayerLeft();
+					drawPlayer();
+				}
 				coor = strcat(dbStr(getPlayerX() + 1)," : ");
 				coor = strcat(coor,dbStr(getPlayerY() + 1));
 				coor = strcat(coor," | " );
@@ -72,7 +81,7 @@ void DarkGDK()
 				dbPrint(coor);
 				PLAYER_MOVED = true;
 			}
-			dbSprite(5, getPlayerX() * 8, getPlayerY() * 8 - 2, getPlayerAnim());
+			
 			//dbPasteImage(getPlayerAnim(), getPlayerX() * 8, getPlayerY() * 8);
 			if (PLAYER_MOVED == true)
 			{
@@ -80,6 +89,11 @@ void DarkGDK()
 			}
 		}
 	}
+}
+
+void drawPlayer()
+{
+	dbPasteImage(getPlayerAnim(), getPlayerX() * 8, getPlayerY() * 8 - 2);
 }
 
 void gridLines()
