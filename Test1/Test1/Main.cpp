@@ -12,6 +12,8 @@ void DarkGDK()
 	dbSync();
 	dbSyncRate(60);
 
+	char* coor;
+
 	while (LoopGDK())
 	{
 		dbCLS(dbRGB(0,0,0));
@@ -20,7 +22,6 @@ void DarkGDK()
 		{
 			if (dbUpKey() == 1)
 			{
-				char* coor;
 				movePlayerUp();
 				coor = strcat(dbStr(getPlayerX() + 1)," : ");
 				coor = strcat(coor,dbStr(getPlayerY() + 1));
@@ -32,7 +33,6 @@ void DarkGDK()
 			}
 			if (dbDownKey() == 1)
 			{
-				char* coor;
 				movePlayerDown();
 				coor = strcat(dbStr(getPlayerX() + 1)," : ");
 				coor = strcat(coor,dbStr(getPlayerY() + 1));
@@ -44,7 +44,6 @@ void DarkGDK()
 			}
 			if (dbRightKey() == 1)
 			{
-				char* coor;
 				movePlayerRight();
 				coor = strcat(dbStr(getPlayerX() + 1)," : ");
 				coor = strcat(coor,dbStr(getPlayerY() + 1));
@@ -54,8 +53,8 @@ void DarkGDK()
 				dbPasteImage(getPlayerAnim(), getPlayerX() * 32, getPlayerY() * 32);
 				dbWait(100);
 			}
+			if (dbLeftKey() == 1)
 			{
-				char* coor;
 				movePlayerLeft();
 				coor = strcat(dbStr(getPlayerX() + 1)," : ");
 				coor = strcat(coor,dbStr(getPlayerY() + 1));
