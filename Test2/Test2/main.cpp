@@ -2,7 +2,7 @@
 #include "main.h"
 #include "player.h"
 
-const int PLAYER_SPRITE = 1;
+
 bool PLAYER_MOVED = false;
 
 void checkMovement();
@@ -21,6 +21,7 @@ void DarkGDK()
 	while (LoopGDK())
 	{
 		dbClear(0,0,0);
+
 		checkMovement();
 	}
 }

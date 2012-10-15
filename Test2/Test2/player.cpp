@@ -2,6 +2,8 @@
 #include "main.h"
 #include "player.h"
 
+const int PLAYER_SPRITE = 1;
+
 int pAnim[12];
 int playerH = 25;
 int playerX = 8;
