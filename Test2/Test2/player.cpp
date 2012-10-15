@@ -4,8 +4,8 @@
 
 int pAnim[12];
 int playerH = 25;
-int playerX = 5;
-int playerY = 5;
+int playerX = 8;
+int playerY = 8;
 
 int playerDir = 2; //0 = North (Up), 1 = East (Right), 2 = South (Down), 3 = West (Left)
 int playerAnim = 0; //0, 1, 2. Allows appearance of movement.
@@ -136,7 +136,6 @@ bool movePlayer( int x, int y )
 void playerNextAnimation()
 {
 	playerAnim++;
-	dbPrint(dbStr(playerAnim));
 	if (playerAnim > 2)
 		playerAnim = 0;
 }

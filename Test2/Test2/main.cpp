@@ -5,21 +5,30 @@
 const int PLAYER_SPRITE = 1;
 bool PLAYER_MOVED = false;
 
+void checkMovement();
 void gridLines();
 void drawPlayer();
 
 void DarkGDK()
 {
+	dbSetImageColorKey(84,138,150);
+
 	playerSetup();
 
-	dbSync();
+	dbSync(); 
 	dbSyncRate(60);
 
 	while (LoopGDK())
 	{
-		PLAYER_MOVED = false;
 		dbClear(0,0,0);
-		//gridLines();
+		checkMovement();
+	}
+}
+
+void checkMovement()
+{
+	PLAYER_MOVED = false;
+		
 		if (!playerInMotion())
 		{
 			if (dbUpKey() == 1)
@@ -75,7 +84,6 @@ void DarkGDK()
 			}
 			if (dbLeftKey() == 1)
 			{
-				char* coor;
 				for (int i = 1; i <= 4; i++)
 				{
 					movePlayerLeft();
@@ -83,11 +91,6 @@ void DarkGDK()
 					dbWait(50);
 				}
 				resetPlayerAnimation();
-				coor = strcat(dbStr(getPlayerX() + 1)," : ");
-				coor = strcat(coor,dbStr(getPlayerY() + 1));
-				coor = strcat(coor," | " );
-				coor = strcat(coor,dbStr(getPlayerAnim()));
-				dbPrint(coor);
 				PLAYER_MOVED = true;
 			}
 			
@@ -97,14 +100,20 @@ void DarkGDK()
 				//dbWait(80);
 			}
 		}
-	}
 }
 
 void drawPlayer()
 {
 	dbCLS(dbRGB(0,0,0));
+	//gridLines();
+	char* coor;
+	coor = strcat(dbStr(getPlayerX() / 4 + 1)," : ");
+	coor = strcat(coor,dbStr(getPlayerY() / 4 + 1));
+	coor = strcat(coor," | " );
+	coor = strcat(coor,dbStr(getPlayerAnim()));
+	dbPrint(coor);
 	playerNextAnimation();
-	dbPasteImage(getPlayerAnim(), getPlayerX() * 8, getPlayerY() * 8 - 2);
+	dbPasteImage(getPlayerAnim(), getPlayerX() * 8, getPlayerY() * 8 - 1);
 }
 
 void gridLines()
